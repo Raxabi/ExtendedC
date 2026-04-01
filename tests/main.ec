@@ -30,14 +30,28 @@ pub const char (const *Lexer p) next() {
   return p.next_n(0);
 }
 
+/**
+ * Peeks at the next character in the file without advancing the lexer.
+ * @returns The next character in the file without consuming it.
+ */
 pub const char (const *Lexer p) ahead() {
   return p.file.peek();
 }
 
+/**
+ * Checks if the next character matches the given character without advancing the lexer.
+ * @param c The character to check against.
+ * @returns True if the next character matches, false otherwise.
+ */
 pub bool (const *Lexer p) check(char c) {
   return p.ahead() == c;
 }
 
+/**
+ * Checks if the next character matches the given character and advances the lexer if it does.
+ * @param c The character to match.
+ * @returns The matched character if it matches, or '\0' if it does not match.
+ */
 pub const char (const *Lexer p) match(char c) {
   if (p.check(c))
     return p.next_n(n);
