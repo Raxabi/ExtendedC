@@ -1,0 +1,20 @@
+{
+  "version": "beta-1.0.0",
+  "tasks": {
+    "dev": "deno run --allow-read --allow-net --watch src/main.ts --debug tests/main.scrap"
+  },
+  "compilerOptions": {
+    "strict": true,
+    "strictPropertyInitialization": false
+  },
+  "imports": {
+    "@std/path":   "jsr:@std/path",
+    "@std/cli":    "jsr:@std/cli",
+    "@std/expect": "jsr:@std/expect",
+    "@std/assert": "jsr:@std/assert",
+
+    "@/":          "./src/",
+    "@frontend/": "./src/frontend/",
+    "@engine/":   "./src/engine/"
+  }
+}

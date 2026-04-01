@@ -1,0 +1,10 @@
+{
+  "deno.enable": true,
+  "editor.tabSize": 2,
+  "editor.insertSpaces": true,
+  "workbench.editor.mouseBackForwardToNavigate": true,
+
+  "material-icon-theme.files.associations": {
+    "*.ec": "extendedc"
+  }
+}
