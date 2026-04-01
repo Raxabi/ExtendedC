@@ -14,7 +14,7 @@ pub struct Lexer {
  * @param n The number of characters to read ahead (default is 0, meaning the next character).
  * @returns The next character read from the file.
  */
-pub const char (const *Lexer p) next_n(usize n) {
+pub char (const *Lexer p) next_n(usize n) {
   const char next = p.file.read_char(n);
   p.current = next;
   p.isEOF = next == EOF;
@@ -26,7 +26,7 @@ pub const char (const *Lexer p) next_n(usize n) {
  * Reads the next character from the file and updates the current character and EOF status.
  * @returns The next character read from the file.
  */
-pub const char (const *Lexer p) next() {
+pub char (const *Lexer p) next() {
   return p.next_n(0);
 }
 
@@ -34,7 +34,7 @@ pub const char (const *Lexer p) next() {
  * Peeks at the next character in the file without advancing the lexer.
  * @returns The next character in the file without consuming it.
  */
-pub const char (const *Lexer p) ahead() {
+pub char (const *Lexer p) ahead() {
   return p.file.peek();
 }
 
@@ -52,7 +52,7 @@ pub bool (const *Lexer p) check(char c) {
  * @param c The character to match.
  * @returns The matched character if it matches, or '\0' if it does not match.
  */
-pub const char (const *Lexer p) match(char c) {
+pub char (const *Lexer p) match(char c) {
   if (p.check(c))
     return p.next_n(n);
 
@@ -64,7 +64,7 @@ pub const char (const *Lexer p) match(char c) {
  * @param file The file to read from.
  * @returns A new lexer instance.
  */
-pub const Lexer l_new(const *File file) {
+pub Lexer l_new(const *File file) {
   const char current = '\0';
   bool isEOF = current == EOF;
   return Lexer{
