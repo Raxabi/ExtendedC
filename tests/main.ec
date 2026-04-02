@@ -146,7 +146,7 @@ pub struct Token {
  * @param n The number of characters to read ahead (default is 0, meaning the next character).
  * @returns The next character read from the file.
  */
-pub char (const* Lexer l) next_n(usize n) {
+pub const char (const* Lexer l) next_n(usize n) {
   const char next = l.file.read_char(n);
   l.current = next;
   l.isEOF = next == EOF;
@@ -163,7 +163,7 @@ pub char (const* Lexer l) next_n(usize n) {
  * Reads the next character from the file and updates the current character and EOF status
  * @returns The next character read from the file
  */
-pub char (const* Lexer l) next() {
+pub const char (const* Lexer l) next() {
   return l.next_n(0);
 }
 
