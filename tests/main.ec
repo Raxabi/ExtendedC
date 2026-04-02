@@ -74,7 +74,7 @@ pub char (const* Lexer p) match(char c) {
  * @param l The lexer to scan from.
  * @returns A pointer to the next token scanned from the lexer.
  */
-pub const* Token (*Lexer l) scan() {
+pub const* const Token (*Lexer l) scan() {
   // stuff
 
   String content = "fn";
